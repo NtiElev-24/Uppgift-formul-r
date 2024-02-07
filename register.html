@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="Formulär.css">
+</head>
+<body>
+<form id="registreringsFormulär">
+    <fieldset>
+        <p>En asterisk (<span style="color: red">*</span>) brevidet fält betyder att fältet är nödvändigt</p>
+
+        <label for="Användarnamn">Användarnamn: <span style="color: red">*</span></label> <br>
+        <input type="text" id="Användarnamn" name="Användarnamn" maxlength="20" required placeholder="Förnamn.Afternamn" autofocus><br>
+
+        <label for="Lösenord">Password: <span style="color: red">*</span></label><br>
+        <input type="password" id="Lösenord" name="Lösenord" required placeholder="password123" pattern="(?=.*\d)(?=.*[A-Za-z]).{6,}" title="Must contain at least one number , and at least 6 or more characters"><br>
+
+        <label for="Verifiering">Verifiering av lösenord:  <span style="color: red">*</span></label> <br>
+        <input type="password" id="verifiering" name="Lösenord" required placeholder="password123" min="6"><br>
+        <label for="Gmail">Gmail:  <span style="color: red">*</span></label> <br>
+        <input type="email" id="Gmail" name="Gmail" required placeholder="Fnamn.Anamn@myschool.se" ><br><br>
+
+        <label for="Årskurs">Årskurs:</label>
+        <select name="Årskurs" id="Årskurs">
+          <option value="None">None</option>
+          <option value="Å1">År 1</option>
+          <option value="Å2">År 2</option>
+          <option value="Å3">År 3</option>
+        </select><br><br>
+
+        <label for="personnummer">Personnummer: <span style="color: red">*</span></label>
+        <input type="tel" id="personnummer" name="personnummer" pattern="[0-9]{6}-[0-9]{4}" required placeholder="YYMMDD - XXXX" > YYMMDD-xxxx
+    </fieldset> <br>
+
+    <input type="submit" value="Submit">
+</form>
+<br>
+<a href="login.html">If you do have an account, Login here!</a>
+
+<script>
+    document.getElementById("registreringsFormulär").addEventListener("submit", function (event) {
+        // Hämta lösenord
+        var lösenord = document.getElementById("Lösenord").value;
+        var verifiering = document.getElementById("verifiering").value;
+
+        // Kolla om lösenorden matchar
+        if (lösenord !== verifiering) {
+            alert("Lösenorden matchar inte. försök igen plz.");
+            event.preventDefault();
+        }
+    });
+</script>
+
+</body>
+</html>

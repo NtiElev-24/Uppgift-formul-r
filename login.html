@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="Formulär.css">
+</head>
+<body>
+<form>
+    <fieldset>
+        <p>En asterisk (<span style="color: red">*</span>) brevidet fält betyder att fältet är nödvändigt</p>
+
+        <label for="Användarnamn">Användarnamn: <span style="color: red">*</span></label> <br>
+        <input type="text" id="Användarnamn" name="Användarnamn" maxlength="20" required placeholder="Förnamn.efternamn" autofocus><br>
+        <label for="Lösenord">Lösenord: <span style="color: red">*</span></label> <br>
+        <input type="password" id="Lösenord" name="Lösenord" required placeholder="password123" pattern="(?=.*\d)(?=.*[a-z]).{6,}" title="Must contain at least one number , and at least 6 or more characters"><br>
+    </fieldset> <br>
+
+    <input type="submit" value="Submit">
+</form>
+
+<a href="register.html">If you don't have an accont, Register here!</a>
+
+</body>
+</html>
